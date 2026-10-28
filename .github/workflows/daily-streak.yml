@@ -1,0 +1,41 @@
+name: Daily Activity Sentinel
+
+on:
+  schedule:
+    # Runs once daily at 11:45 UTC (ensuring a clean daily contribution graph pulse)
+    - cron: '45 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  heartbeat:
+    name: Record Daily Activity Pulse
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Record Pulse
+        run: |
+          python sentinel.py
+
+      - name: Commit & Push Daily Contribution Pulse
+        run: |
+          git config --global user.name "Avi Perera"
+          git config --global user.email "aviperera0@gmail.com"
+          git add heartbeat.json
+          if git diff --staged --quiet; then
+            echo "No pulse changes to commit."
+          else
+            git commit -m "chore(pulse): record daily activity heartbeat [skip ci]"
+            git push
+          fi
