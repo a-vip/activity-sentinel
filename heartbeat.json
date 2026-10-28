@@ -3,12 +3,13 @@
   "email": "aviperera0@gmail.com",
   "streak_days": 1,
   "total_pulses": 1,
-  "last_pulse": "2026-10-28T10:53:00Z",
+  "last_pulse": "2026-10-28T10:54:50.342997+00:00",
   "history": [
     {
       "date": "2026-10-28",
       "timestamp": "2026-10-28T10:53:00Z",
       "status": "healthy"
     }
-  ]
+  ],
+  "status": "active"
 }
