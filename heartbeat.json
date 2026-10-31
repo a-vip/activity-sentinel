@@ -1,9 +1,9 @@
 {
   "user": "Avi Perera",
   "email": "aviperera0@gmail.com",
-  "streak_days": 3,
-  "total_pulses": 3,
-  "last_pulse": "2026-10-30T17:14:23.779580+00:00",
+  "streak_days": 4,
+  "total_pulses": 4,
+  "last_pulse": "2026-10-31T16:20:14.481075+00:00",
   "history": [
     {
       "date": "2026-10-28",
@@ -18,6 +18,11 @@
     {
       "date": "2026-10-30",
       "timestamp": "2026-10-30T17:14:23.779580+00:00",
+      "status": "healthy"
+    },
+    {
+      "date": "2026-10-31",
+      "timestamp": "2026-10-31T16:20:14.481075+00:00",
       "status": "healthy"
     }
   ],
